@@ -1,0 +1,675 @@
+:root {
+    --opay-primary: #3560f6;
+    --opay-secondary: #1d3a8a;
+    --opay-accent: #00c9a7;
+    --opay-light: #f8f9fa;
+    --opay-dark: #1e293b;
+    --opay-success: #10b981;
+    --opay-warning: #f59e0b;
+    --opay-danger: #ef4444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f0f4f8, #e2e8f0);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--opay-dark);
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.header {
+    background: purple;
+    color: white;
+    padding: 25px 20px;
+    text-align: center;
+    position:fixed;
+    width: 100%;
+    top: 0px;
+    z-index:1000 ;
+}
+
+.header h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.logo {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.9rem;
+    font-weight: bold;
+    background: white;
+    color: purple;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .brand{
+        padding-left :3px;
+        
+    }
+}
+
+.signup-container, .login-container, .dashboard-container {
+    padding: 30px 25px;
+    margin-top:20px;
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: purple;
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+.row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    border: 2px solid #e2e8f0;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.form-control:focus {
+    border-color: purple;
+    box-shadow: 0 0 0 0.25rem rgba(53, 96, 246, 0.1);
+    outline: none;
+}
+
+.input-group {
+    display: flex;
+}
+
+.input-group-prepend {
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    background: #f8f9fa;
+    border: 2px solid #e2e8f0;
+    border-right: none;
+    border-radius: 12px 0 0 12px;
+    font-weight: 500;
+    color: var(--opay-dark);
+}
+
+.password-container {
+    position: relative;
+}
+
+.password-container .form-control {
+    padding-right: 45px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #94a3b8;
+    font-size: 1.1rem;
+    background: none;
+    border: none;
+    z-index: 10;
+}
+
+.gender-group {
+    margin-bottom: 20px;
+}
+
+.gender-options {
+    display: flex;
+    gap: 15px;
+}
+
+.gender-option {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 10px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.gender-option.selected {
+    border-color: purple;
+    background-color: rgba(53, 96, 246, 0.1);
+}
+
+.gender-option i {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    color: #64748b;
+}
+
+.gender-option.selected i {
+    color:purple;
+}
+
+.btn-opay {
+    background: purple;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    width: 100%;
+    margin: 20px 0 10px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.btn-opay:hover {
+    background: purple;
+    transform: translateY(-2px);
+}
+
+.btn-outline-opay {
+    background: transparent;
+    color: purple;
+    border: 2px solid purple;
+    padding: 15px;
+    border-radius: 12px;
+    font-weight: 600;
+    width: 100%;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+    cursor: pointer;
+    font-size: 1rem;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-outline-opay:hover {
+    background: purple;
+    color: white;
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+.form-footer a {
+    color: purple;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.form-footer a:hover {
+    color: purple;
+    text-decoration: underline;
+}
+
+.error-message {
+    color: var(--opay-danger);
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: none;
+}
+        
+ .social-btn:hover {
+            transform: translateY(-3px);
+        }
+        
+        .google {
+            background: linear-gradient(45deg, #4285F4, #34A853, #FBBC05, #EA4335);
+        }
+        
+        .facebook {
+            background: linear-gradient(45deg, #3b5998, #8b9dc3);
+        }
+        
+        .apple {
+            background: linear-gradient(45deg, #000000, #434343);
+        }
+
+
+/* Dashboard Styles */
+.profile-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--opay-primary), var(--opay-accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    color: white;
+    font-size: 1.3rem;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.user-greeting {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: purple;
+}
+
+.user-email {
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+.balance-container {
+    background: purple;
+    color: white;
+    padding: 5px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    padding-top: 50px;
+}
+
+.balance-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.balance-title {
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.balance-amount {
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    transition: all 0.3s;
+}
+
+.balance-hidden {
+    letter-spacing: 5px;
+    filter: blur(10px);
+}
+
+.btn-add-money {
+    background: white;
+    color: purple;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-weight: 700;
+    width: 50%;
+    transition: all 0.3s;
+}
+
+.btn-add-money:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-container {
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.ad-carousel {
+    display: flex;
+    overflow: hidden;
+    border-radius: 20px;
+    height: 50px;
+    position: relative;
+}
+
+.ad-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: purple;
+    color: white;
+    font-size: 1.0rem;
+    font-weight: 300;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.ad-item.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.ad-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.transfer-section {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--opay-secondary);
+    display: flex;
+    align-items: center;
+}
+
+.section-title i {
+    margin-right: 10px;
+    background: purple;
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.transfer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.transfer-item {
+    text-align: center;
+    padding: 15px 10px;
+    border-radius: 15px;
+    background: #f8f9fa;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.transfer-item:hover {
+    background: #e2e8f0;
+    transform: translateY(-3px);
+}
+
+.transfer-icon {
+    width: 50px;
+    height: 50px;
+    background: #e0f2fe;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    color: purple;
+    font-size: 1.5rem;
+}
+
+.transfer-name {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--opay-dark);
+}
+
+.services-card {
+    background: white;
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.service-item {
+    background: white;
+    border-radius: 15px;
+    padding: 10px 10px;
+    text-align: center;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+}
+
+.service-icon {
+    width: 50px;
+    height: 50px;
+    background: #f0f7ff;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    color: purple
+    ;
+    font-size: 1.5rem;
+}
+
+.service-name {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--opay-dark);
+}
+
+.card {
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.list-group {
+    list-style: none;
+}
+
+.list-group-item {
+    padding: 15px 20px;
+    border-bottom: 1px solid #f1f5f9;
+    display: flex;
+    align-items: center;
+}
+
+.list-group-item:last-child {
+    border-bottom: none;
+}
+
+.transaction-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.transaction-details {
+    flex: 1;
+}
+
+.transaction-title {
+    font-weight: 500;
+    margin-bottom: 3px;
+}
+
+.transaction-date {
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+.transaction-amount {
+    font-weight: 600;
+}
+
+.navbar {
+    background: white;
+    border-top: 1px solid #e2e8f0;
+    padding:12 0 0 12px;
+    display: flex;
+    justify-content: space-around;
+    position:fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.nav-item {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.nav-item.active {
+    color: purple;
+}
+
+.nav-icon {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .container {
+        border-radius: 15px;
+    }
+    
+    .signup-container, .login-container, .dashboard-container {
+        padding: 30px 20px;
+    }
+    
+    .form-title {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+    
+    .row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .form-control {
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+    
+    .toggle-password {
+        right: 12px;
+        font-size: 1rem;
+    }
+    
+    .btn-outline-opay, .btn-opay {
+        padding: 14px;
+        font-size: 1rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+    
+    .service-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .transfer-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+    
+    .transfer-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .balance-amount {
+        font-size: 2rem;
+    }
+}
+ .social-login {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 25px 0;
+    }
+        
+   .social-btn {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        color: white;
+        cursor: pointer;
+        transition: transform 0.3s;
+        box-shadow: 0 4px 8px rgba(0,0, 0, 0.1);
+        }
